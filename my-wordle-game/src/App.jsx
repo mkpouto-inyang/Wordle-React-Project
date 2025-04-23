@@ -1,23 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import InputBox from './components/InputBox'
+import Row from './components/Row'
+import InputRow from './components/Row'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       {/* Header section */}
       <section>
-        <h1 class="text-3xl font-bold underline">
-          Hello world!
-        </h1>
+        <div className='text-red-400 h-[100px] flex justify-center items-center mb-[40px]'>
+            <h1 className="text-3xl font-bold" title='Hello'>
+              Wordle Game
+            </h1>
+        </div>
       </section>
 
       {/* Main Game section */}
       <section>
-        
+         <div className='flex items-center flex-col'>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
+            <Row></Row>
+         </div>
+         
       </section>
 
       {/* On-screen keyboard */}
