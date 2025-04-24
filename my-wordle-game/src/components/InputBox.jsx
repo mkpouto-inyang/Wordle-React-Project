@@ -8,19 +8,20 @@ const InputBox = () => {
     let wordEntry = "";
 
     const handleNextInputFocus = (e) =>{
-        console.log('NEXTINPUTFOCUS FUNCTION')
         const inputElement = e.target
         const letter = e.target.value
-        // if input is filled, focus on the next input
-        if ((letter.length) != 0){
-            console.log('input is filled')
+
+        // if input is filled, the input box is not the last, focus on the next input
+        if ((letter.length != 0 && inputElement.nextSibling)){
             inputElement.nextSibling.focus()
-        }else(console.log('input empty'))
+        }
     }
 
-    const logWordEntry = () =>{
+    const logWordEntry = (e) =>{
         console.log('LOGWORDENTRY')
-
+        // const letter = e.target.value
+        // wordEntry = wordEntry + letter
+        // console.log(wordEntry)
     }
 
     const capitalizeInput = (e) => {
@@ -33,7 +34,7 @@ const InputBox = () => {
     const handleChange = (e) =>{
         capitalizeInput(e);
         handleNextInputFocus(e);
-        logWordEntry()
+        logWordEntry(e)
     }
 
     return ( 
